@@ -6,16 +6,18 @@ if (rvm >/dev/null 2>&1); then
     exit 1
 fi
 
-sudo apt-get update
+sudo apt-get clean all && apt-get makecache
 
 ./scripts/install_ruby.sh
 source ~/.profile
 
 ./scripts/clone_nise_bosh.sh
 ./scripts/clone_cf_release.sh
+#./scripts/localize_cf_release.sh
 
 ./scripts/install_environemnt.sh
-./scripts/install_cf_release.sh
+
+#./scripts/install_cf_release.sh
 
 set +x
 echo "Done!"

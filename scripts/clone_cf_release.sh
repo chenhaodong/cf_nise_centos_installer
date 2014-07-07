@@ -21,7 +21,8 @@ if [ ! "$(ls -A cf-release)" ]; then
 
         if [ $CF_RELEASE_USE_HEAD != "no" ]; then
             # required to compile a gem native extension of CCNG
-            sudo apt-get -y install git-core libmysqlclient-dev libpq-dev libsqlite3-dev libxml2-dev libxslt-dev
+	    yum install -y git mysql postgresql-libs sqlite-devel libxml2-devel libxslt-devel
+            # sudo apt-get -y install git-core libmysqlclient-dev libpq-dev libsqlite3-dev libxml2-dev libxslt-dev
             gem install rake -v 0.9.2.2 --no-rdoc --no-ri # hack for collector
 
             git submodule update --init --recursive
