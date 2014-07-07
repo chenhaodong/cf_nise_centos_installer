@@ -8,6 +8,7 @@ if [ ! -d ~/.rbenv ]; then
     git clone https://github.com/sstephenson/ruby-build.git ~/.rbenv/plugins/ruby-build
     echo 'eval "$(rbenv init -)"' >> ~/.profile
 fi
+export PATH=~/.rbenv/bin:$PATH
 source ~/.profile
 if ! (rbenv versions | grep -q 1.9.3-p484); then
     rbenv install 1.9.3-p484

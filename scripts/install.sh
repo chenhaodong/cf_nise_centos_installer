@@ -6,7 +6,7 @@ if (rvm >/dev/null 2>&1); then
     exit 1
 fi
 
-sudo apt-get clean all && apt-get makecache
+sudo yum clean all && yum makecache
 
 ./scripts/install_ruby.sh
 source ~/.profile
